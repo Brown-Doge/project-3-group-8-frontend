@@ -5,11 +5,11 @@
   "description": "EventLink Frontend - CST 438 Project 3",
   "dependencies": {
     "expo": "^54.0.22",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-native-web": "^0.21.0",
     "react-router-dom": "^6.8.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "^0.0.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",
