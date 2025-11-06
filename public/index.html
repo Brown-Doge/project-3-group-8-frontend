@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0a74da" />
+    <title>Project 3 - Group 8</title>
+
+    <!-- Favicon and manifest (place your files in /public if used) -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- App stylesheet (optional) -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Minimal baseline styles to make the page usable if no CSS provided -->
+    <style>
+        :root { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color-scheme: light dark; }
+        html,body { height:100%; margin:0; background:#f7f7fb; }
+        .app { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; padding:24px; gap:20px; }
+        header { width:100%; max-width:1000px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+        header h1 { margin:0; font-size:1.125rem; }
+        main { width:100%; max-width:1000px; background:#fff; border-radius:8px; box-shadow:0 6px 24px rgba(11,22,46,0.06); padding:24px; }
+        footer { width:100%; max-width:1000px; color:#666; font-size:0.9rem; text-align:center; margin-top:12px; }
+    </style>
+</head>
+<body>
+    <div class="app" id="app-root">
+        <header>
+            <h1>Project 3 - Group 8</h1>
+            <nav aria-label="Primary">
+                <!-- Add links for your app here -->
+                <a href="#" style="text-decoration:none;color:#0a74da;">Home</a>
+            </nav>
+        </header>
+
+        <main id="root">
+            <!-- App will mount here (React, Vue, or other) -->
+            <p style="margin:0.25rem 0 0 0; color:#444;">
+                This is the public index.html. Replace or mount your frontend app into the element with id="root".
+            </p>
+        </main>
+
+        <footer>
+            © Group 8 — CST 438
+        </footer>
+    </div>
+
+    <!-- Your bundled script; replace path with your build output (e.g., /static/js/bundle.js or /main.js) -->
+    <script src="/main.js" defer></script>
+    <noscript>
+        This application requires JavaScript to run. Please enable JavaScript in your browser.
+    </noscript>
+</body>
+</html>
