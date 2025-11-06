@@ -5,8 +5,8 @@
   "description": "EventLink Frontend - CST 438 Project 3",
   "dependencies": {
     "expo": "^54.0.22",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
     "react-native-web": "^0.21.0",
