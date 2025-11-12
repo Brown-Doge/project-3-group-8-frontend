@@ -1,53 +1,87 @@
 import React from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 
-function LoginPage() {
-  const handleGoogleLogin = () => {
-    const backendUrl = process.env.REACT_APP_API_URL || '';
-    window.location.href = `${backendUrl}/oauth2/authorization/google`;
-  };
-
+export default function LoginPage() {
   return (
-    <div style={styles.container}>
-      <div style={styles.box}>
-        <h2 style={styles.heading}>Sign In to Get Your Tickets</h2>
-        <p style={styles.subheading}>
-          Buy tickets to exciting events and see which games your friends are attending.
-        </p>
-        <button style={styles.button} onClick={handleGoogleLogin}>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-            alt="Google Logo"
-            style={styles.icon}
+    <View style={styles.container}>
+      <Text style={styles.title}>Sign in to get your tickets</Text>
+      <Text style={styles.subheading}>
+        Buy tickets to exciting events and see which games your friends are attending.
+      </Text>
+
+      <View style={styles.form}>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          keyboardType="email-address"
+          autoCapitalize="none"
+          textContentType="emailAddress"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
+        />
+        <TouchableOpacity style={styles.button}>
+          <Image
+            source={{ uri: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' }}
+            style={styles.googleIcon}
+            accessibilityLabel="Google Logo"
           />
-          Continue with Google
-        </button>
-      </div>
-    </div>
+          <Text style={styles.buttonText}>Continue with Google</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', background: '#f0f2f5',
+    flex: 1,
+    justifyContent: 'center',
+    padding: 24,
+    backgroundColor: '#fff',
   },
-  box: {
-    background: '#fff', borderRadius: 8, padding: '2.5rem 3.5rem', boxShadow: '0 4px 20px rgba(0,0,0,0.1)', textAlign: 'center',
-  },
-  heading: {
-    fontWeight: 700, marginBottom: '0.5rem', fontSize: '1.8rem',
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 6,
+    textAlign: 'center',
   },
   subheading: {
-    color: '#666', marginBottom: '2rem', fontSize: '1rem',
+    fontSize: 14,
+    color: '#666',
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+  form: {
+    marginTop: 10,
+  },
+  input: {
+    height: 48,
+    borderColor: '#ddd',
+    borderWidth: 1,
+    borderRadius: 6,
+    paddingHorizontal: 12,
+    marginBottom: 12,
+    fontSize: 16,
   },
   button: {
-    display: 'flex', alignItems: 'center', gap: '1rem',
-    background: '#4285F4', color: 'white', border: 'none',
-    borderRadius: 4, padding: '0.8rem 2rem', fontSize: 18,
-    cursor: 'pointer', fontWeight: 600, boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#4285F4',
+    paddingVertical: 12,
+    borderRadius: 6,
   },
-  icon: {
-    width: 28, height: 28, background: 'white', borderRadius: '50%',
+  googleIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
   },
-};
-
-export default LoginPage;
+  buttonText: {
+    color: '#fff',
+    fontWeight: '600',
+  },
+});

@@ -1,44 +1,63 @@
 import React from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-function HomePage() {
+export default function HomePage() {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Discover Events & Buy Tickets</h1>
-      <p style={styles.description}>
-        Browse upcoming games and events. See which events your friends are going to and never miss out on the fun!
-      </p>
+    <ScrollView contentContainerStyle={styles.container}>
+      <Text style={styles.title}>Welcome to EventLink</Text>
+      <Text style={styles.description}>
+        Discover events & buy tickets.
+      </Text>
+      <Text style={styles.description}>
+        Browse upcoming games and events. See which events your friends are going to and never miss out on the fun.
+      </Text>
 
-      <div style={styles.features}>
-        <div style={styles.featureCard}>
-          <h3>Buy Tickets Easily</h3>
-          <p>Secure your seat with a few clicks and manage your orders smoothly.</p>
-        </div>
-        <div style={styles.featureCard}>
-          <h3>Friends & Social</h3>
-          <p>Know what events your friends plan to attend and join them for a great time.</p>
-        </div>
-      </div>
-    </div>
+      <View style={styles.featureCard}>
+        <Text style={styles.featureTitle}>Buy Tickets Easily</Text>
+        <Text style={styles.featureDescription}>
+          Secure your seat with a few clicks and manage your orders smoothly.
+        </Text>
+      </View>
+
+      <View style={styles.featureCard}>
+        <Text style={styles.featureTitle}>Friends & Social</Text>
+        <Text style={styles.featureDescription}>
+          Know what events your friends plan to attend and join them for a great time.
+        </Text>
+      </View>
+    </ScrollView>
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
-    maxWidth: '900px', margin: '0 auto', padding: '3rem 1.5rem', fontFamily: 'Arial, sans-serif', textAlign: 'center',
+    padding: 20,
+    backgroundColor: '#fff',
+    alignItems: 'center',
   },
   title: {
-    fontSize: '2.5rem', fontWeight: '700', marginBottom: '1rem',
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginVertical: 10,
   },
   description: {
-    fontSize: '1.25rem', color: '#555', marginBottom: '3rem',
-  },
-  features: {
-    display: 'flex', justifyContent: 'center', gap: '3rem', flexWrap: 'wrap',
+    fontSize: 16,
+    marginVertical: 6,
+    textAlign: 'center',
   },
   featureCard: {
-    flex: '1 1 300px', background: '#fafafa', borderRadius: 8,
-    padding: '2rem', boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+    backgroundColor: '#e0e0e0',
+    borderRadius: 8,
+    padding: 15,
+    marginTop: 15,
+    width: '100%',
   },
-};
-
-export default HomePage;
+  featureTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    marginBottom: 5,
+  },
+  featureDescription: {
+    fontSize: 14,
+  },
+});
